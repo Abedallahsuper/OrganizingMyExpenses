@@ -19,15 +19,18 @@ class ExampleTest extends TestCase
     /**
      * A basic test example.
      */
-    public function test_add_expense(): void
-    {
+  public function test_add_expense(): void
+{
+     $this->withoutMiddleware(); 
 
-        $response = $this->post('/expense', [
-            'name' => 'Test Expense',
-            'amount' => 100,
-            'category' => 'Test Category',
-            'date' => '2022-01-01',
-        ]);
-        $response->assertStatus(200);   
-    }
+    $response = $this->post('/api/expenses', [ 
+        'name' => 'Test Expense',
+        'amount' => 100,
+        'category_id' => 1,
+        'date' => '2022-01-01',
+    ]);
+
+     $response->assertStatus(201);   
+}
+
 }
