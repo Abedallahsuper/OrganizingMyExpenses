@@ -26,7 +26,7 @@ class ExampleTest extends TestCase
     $response = $this->post('/api/expenses', [ 
         'name' => 'Test Expense',
         'amount' => 100,
-        'category_id' => 1,
+        'categories_id' => 1,
         'date' => '2022-01-01',
     ]);
 
