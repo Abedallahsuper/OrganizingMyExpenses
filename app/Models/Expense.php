@@ -15,10 +15,7 @@ class Expense extends Model
         'year',
         'month'
     ];
-    protected $casts = [
-        'amount' => 'decimal:2', 
-    ];
-
+    
     public function category()
     {
         return $this->belongsTo(Category::class);
